@@ -179,6 +179,7 @@ if(USE_PLUGIN_CAFFE)
 endif()
 
 if (NOT (EXTRA_OPERATORS STREQUAL ""))
+  include_directories(src/operator)
 	mxnet_source_group("Extra"   GLOB_RECURSE "${EXTRA_OPERATORS}/*.cc")
 	mxnet_source_group("Extra\\Cuda"   GLOB_RECURSE "${EXTRA_OPERATORS}/*.cu")
 	FILE(GLOB_RECURSE EXTRA_SRC "${EXTRA_OPERATORS}/*.cc")
